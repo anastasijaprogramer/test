@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta charset="UTF-8" />
+		<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+		<link rel="stylesheet" href="style.css" />
+
+		<title>Form</title>
+	</head>
+	<body>
+		<div class="form">
+			<ul class="tab-group">
+				<li class="tab tab-active"><a href="#signup">Register with email address</a></li>
+				<li class="tab"><a href="#login">Register with phone number</a></li>
+			</ul>
+
+			<div class="tab-content">
+				<div id="signup">
+					<h1>Please enter your email address to register</h1>
+
+					<form action="/" method="post">
+						<!-- email input -->
+						<fieldset class="email field-wrap">
+							<input class="email__input" id="email" type="email" autocomplete="off" />
+							<label class="email__label" name="email"> Enter your email<span class="req">*</span> </label>
+						</fieldset>
+
+						<!-- radio btn -->
+						<fieldset class="radio field-wrap">
+							<input type="radio" id="EUR" name="cur" checked />
+							<label for="EUR">EUR</label>
+
+							<input type="radio" id="RUB" name="cur" />
+							<label for="RUB">RUB</label>
+
+							<input type="radio" id="RSD" name="cur" />
+							<label for="RSD">RSD</label>
+						</fieldset>
+
+						<fieldset class="checkbox field-wrap">
+							<div class="checkbox__checkmark">
+								<input class="checkbox__input" type="checkbox" id="terms" />
+								<label class="checkbox__label" for="terms">Click here to indicate that you agree to the <a href="#">Terms and Conditions</a> </label>
+							</div>
+							<!-- newsletters -->
+							<div class="checkbox__checkmark">
+								<input type="checkbox" id="newsletters" />
+								<label class="checkbox__label" for="newsletters">Subscribe to our <a href="#">newsletters.</a> </label>
+							</div>
+						</fieldset>
+
+						<!-- register no.1 -->
+						<button class="button button-block"><a href="#">Register</a></button>
+					</form>
+				</div>
+
+				<!-- second half -->
+				<div id="login">
+					<h1>Please enter your phone number to register</h1>
+
+					<form action="/" method="post">
+						<fieldset class="phone field-wrap">
+							<input class="phone__input" type="tel" name="phone" autocomplete="off" />
+							<label class="phone__label"> Enter your phone number<span class="req">*</span> </label>
+						</fieldset>
+
+						<!-- radio btn -->
+
+						<fieldset class="radio field-wrap">
+							<input type="radio" id="EUR2" name="cur" checked />
+							<label for="EUR2">EUR</label>
+
+							<input type="radio" id="RUB2" name="cur" />
+							<label for="RUB2">RUB</label>
+
+							<input type="radio" id="RSD2" name="cur" />
+							<label for="RSD2">RSD</label>
+						</fieldset>
+
+						<!-- terms and condition 2 -->
+						<fieldset class="checkbox field-wrap">
+							<div class="checkbox__checkmark">
+								<input class="checkbox__input" type="checkbox" id="terms2" />
+								<label class="checkbox__label" for="terms2">Click here to indicate that you agree to the <a href="#">Terms and Conditions</a> </label>
+							</div>
+							<!-- newsletters -->
+							<div class="checkbox__checkmark">
+								<input type="checkbox" id="newsletters2" />
+								<label class="checkbox__label" for="newsletters2">Subscribe to our <a href="#">newsletters.</a> </label>
+							</div>
+						</fieldset>
+
+						<button class="button button-block"><a href="#">Register</a></button>
+					</form>
+				</div>
+			</div>
+			<!-- tab-content -->
+			<div id="myModal" class="modal">
+				<!-- Modal content -->
+				<div class="modal__content">
+					<span class="modal__close">&times;</span>
+					<section>
+						<div class="modal__loader"></div>
+						<p class="modal__text">Loading...</p>
+					</section>
+				</div>
+			</div>
+		</div>
+		<!-- /form -->
+	</body>
+
+	<script src="main.js"></script>
+</html>

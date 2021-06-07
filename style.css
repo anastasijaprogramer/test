@@ -1,0 +1,404 @@
+*,
+*:before,
+*:after {
+  box-sizing: border-box;
+}
+
+body {
+  background: #c1bdba;
+  font-family: "Titillium Web", sans-serif;
+}
+
+a {
+  text-decoration: none;
+  color: #1ab188;
+  transition: 0.5s ease;
+}
+a:hover {
+  color: #179b77;
+}
+
+.form {
+  background: rgba(19, 35, 47, 0.9);
+  padding: 40px;
+  max-width: 600px;
+  margin: 40px auto;
+  border-radius: 4px;
+  box-shadow: 0 4px 10px 4px rgba(19, 35, 47, 0.3);
+}
+
+.tab-group {
+  list-style: none;
+  padding: 0;
+  margin: 0 0 40px 0;
+}
+.tab-group:after {
+  content: "";
+  display: table;
+  clear: both;
+}
+.tab-group li a {
+  display: block;
+  text-decoration: none;
+  padding: 15px;
+  background: rgba(160, 179, 176, 0.25);
+  color: #a0b3b0;
+  font-size: 20px;
+  float: left;
+  width: 50%;
+  text-align: center;
+  cursor: pointer;
+  transition: 0.5s ease;
+}
+.tab-group li a:hover {
+  background: #179b77;
+  color: #ffffff;
+}
+.tab-group .tab-active a {
+  background: #1ab188;
+  color: #ffffff;
+}
+
+.tab-content > div:last-child {
+  display: none;
+}
+
+h1 {
+  font-size: 1.8em;
+  text-align: center;
+  color: #ffffff;
+  font-weight: 300;
+  margin: 0 0 40px;
+}
+
+label {
+  position: absolute;
+  transform: translateY(-32px);
+  left: 13px;
+  color: rgba(255, 255, 255, 0.5);
+  transition: all 0.25s ease;
+  pointer-events: none;
+  font-size: 22px;
+}
+label .req {
+  margin: 2px;
+  color: #1ab188;
+}
+
+.email,
+.phone {
+  margin-bottom: 80px !important;
+}
+
+.email__label,
+.phone__label {
+  padding: 0px 10px;
+}
+
+input,
+textarea {
+  font-size: 22px;
+  display: block;
+  width: 100%;
+  height: 100%;
+  padding: 5px 10px;
+  background: none;
+  background-image: none;
+  border: 1px solid #a0b3b0;
+  color: #ffffff;
+  border-radius: 0;
+  transition: border-color 0.25s ease, box-shadow 0.25s ease;
+}
+input:focus,
+textarea:focus {
+  outline: 0;
+  border-color: #1ab188;
+}
+input:focus ~ .email__label,
+textarea:focus ~ .email__label {
+  transform: translateY(8px);
+  left: 2px;
+  font-size: 14px;
+}
+input:focus ~ .email__label .req,
+textarea:focus ~ .email__label .req {
+  opacity: 0;
+}
+input:focus ~ .phone__label,
+textarea:focus ~ .phone__label {
+  transform: translateY(8px);
+  left: 2px;
+  font-size: 14px;
+}
+input:focus ~ .phone__label .req,
+textarea:focus ~ .phone__label .req {
+  opacity: 0;
+}
+
+textarea {
+  border: 2px solid #a0b3b0;
+  resize: vertical;
+}
+
+.field-wrap {
+  position: relative;
+  margin-bottom: 40px;
+  border: none;
+  padding: 0 10px;
+}
+
+.button {
+  border: 0;
+  outline: none;
+  border-radius: 0;
+  padding: 15px 0;
+  background: #1ab188;
+  -webkit-appearance: none;
+}
+.button:hover, .button:focus {
+  background: #179b77;
+}
+.button a {
+  font-size: 2rem;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 0.1em;
+  text-decoration: none;
+  color: #ffffff;
+  transition: all 0.5s ease;
+}
+
+.button-block {
+  display: block;
+  width: 100%;
+}
+
+.forgot {
+  margin-top: -20px;
+  text-align: right;
+}
+
+.radio {
+  font-size: 24px;
+  border: none;
+  display: flex;
+  justify-content: space-evenly;
+  align-items: center;
+}
+.radio input[type=radio] {
+  display: none;
+}
+.radio label {
+  position: relative;
+  cursor: pointer;
+  font-weight: bold;
+  margin: 0 10px;
+  pointer-events: all;
+}
+.radio label:nth-last-child(1) {
+  padding-right: 0;
+}
+.radio label::before {
+  content: "";
+  border: 2px solid #ffffff;
+  display: inline-block;
+  width: 30px;
+  height: 30px;
+  margin: -8px 15px;
+  margin-left: 0;
+  border-radius: 50%;
+}
+.radio label::after {
+  content: "";
+  display: inline-block;
+  position: absolute;
+  width: 20px;
+  height: 20px;
+  background: rgba(34, 34, 34, 0);
+  left: 5px;
+  top: 12px;
+  margin: -8px 20px;
+  margin-left: 0;
+  border-radius: 50%;
+  transition: all 0.4s;
+}
+.radio input[type=radio]:checked + label::after {
+  background: #1ab188;
+}
+.radio input[type=radio]:checked + label::before {
+  border-color: #1ab188;
+  transition: border-color 0.25s ease;
+}
+
+/*checkmark*/
+.checkbox .checkbox__checkmark {
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+  padding: 5px 20px;
+}
+.checkbox .checkbox__checkmark label {
+  position: relative;
+  cursor: pointer;
+  pointer-events: all;
+}
+.checkbox .checkbox__checkmark label::before {
+  position: absolute;
+  top: 2px;
+  left: -35px;
+  z-index: 1;
+  width: 16px;
+  height: 16px;
+  content: "";
+  border: 2px solid #a0b3b0;
+  transition: all 0.3s ease-in-out;
+}
+.checkbox .checkbox__checkmark input[type=checkbox] {
+  display: none;
+}
+.checkbox .checkbox__checkmark input[type=checkbox]:checked ~ label::before {
+  width: 21px;
+  height: 10px;
+  border-color: #1ab188;
+  border-top-style: none;
+  border-right-style: none;
+  transform: rotate(-45deg);
+}
+.checkbox .checkbox__label {
+  font-size: 0.9em;
+}
+
+.modal {
+  display: none;
+  position: fixed;
+  z-index: 1;
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  background-color: black;
+  background-color: rgba(0, 0, 0, 0.4);
+}
+
+/* Modal Content/Box */
+.modal__content {
+  background-color: #1dc799;
+  margin: 15% auto;
+  padding: 20px;
+  border: 1px solid #888;
+  width: 52%;
+  display: flex;
+  justify-content: space-between;
+  flex-direction: column;
+  height: auto;
+}
+.modal__content section {
+  display: flex;
+  justify-content: space-evenly;
+  align-items: center;
+  flex-direction: column;
+  height: 250px;
+}
+.modal__content .modal__close {
+  color: #ffffff;
+  float: right;
+  font-size: 28px;
+  font-weight: bold;
+}
+.modal__content .modal__close:hover, .modal__content .modal__close:focus {
+  text-decoration: none;
+  cursor: pointer;
+}
+.modal__content .modal__text {
+  color: #ffffff;
+  font-family: "Titillium Web", sans-serif;
+  font-weight: 600;
+  transition: none;
+  font-size: 18px;
+  text-align: center;
+}
+.modal__content .modal__loader {
+  border: 16px solid #f3f3f3;
+  border-radius: 50%;
+  border-top: 16px solid #179b77;
+  width: 80px;
+  height: 80px;
+  -webkit-animation: spin 2s linear infinite;
+  /* Safari */
+  animation: spin 2s linear infinite;
+}
+
+/* Safari */
+@-webkit-keyframes spin {
+  0% {
+    -webkit-transform: rotate(0deg);
+  }
+  100% {
+    -webkit-transform: rotate(360deg);
+  }
+}
+@keyframes spin {
+  0% {
+    transform: rotate(0deg);
+  }
+  100% {
+    transform: rotate(360deg);
+  }
+}
+label.label-active {
+  transform: translateY(8px);
+  left: 2px;
+  font-size: 14px;
+}
+label.label-active .req {
+  opacity: 0;
+}
+
+@media (max-width: 500px) {
+  .radio {
+    flex-direction: column;
+  }
+  .radio label {
+    margin: 10px;
+  }
+
+  .field-wrap {
+    margin-bottom: 1em;
+  }
+
+  .button a {
+    font-size: 1.5em;
+  }
+
+  .phone__label,
+.email__label {
+    font-size: 17px;
+  }
+
+  .tab-group li a {
+    font-size: 18px;
+  }
+
+  .modal__content {
+    margin: 40% auto;
+    width: 70%;
+    height: 250px;
+  }
+  .modal__content section {
+    height: 200px;
+  }
+}
+@media (max-width: 450px) {
+  h1 {
+    font-size: 1.4em;
+  }
+
+  .tab-group li a {
+    height: 85px;
+  }
+}
+@media (max-width: 350px) {
+  .tab-group li a {
+    font-size: 16px;
+  }
+}
